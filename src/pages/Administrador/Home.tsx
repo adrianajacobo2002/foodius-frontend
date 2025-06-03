@@ -9,9 +9,9 @@ import {
   Container,
 } from "@mui/material";
 import React, { useState } from "react";
-import BusinessCard from "../../components/Solicitud/index"; // ajusta según tu ruta
+import BusinessCard from "../../components/Solicitud";
 
-export default function SolicitudesPage() {
+export default function AdminDashboard() {
   const [tab, setTab] = useState(0);
 
   const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
