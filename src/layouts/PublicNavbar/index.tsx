@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Box, Button, Container } from '@mui/material';
+import { AppBar, Toolbar, Box, Button, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/foodius-logo.png';
 
@@ -10,7 +10,7 @@ const PublicNavbar: React.FC = () => {
       sx={{ 
         backgroundColor: '#F5EFEF', 
         boxShadow: 'none', 
-        py: 2 // más padding vertical
+        py: 2 
       }}
     >
       <Container maxWidth="xl">
@@ -23,8 +23,23 @@ const PublicNavbar: React.FC = () => {
             </Link>
           </Box>
 
-          {/* Botones */}
-          <Box>
+          {/* Menú derecho */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {/* Enlace Partner como texto */}
+            <Typography 
+              component={Link} 
+              to="/foodius-partner"
+              sx={{ 
+                color: '#E9008C', 
+                fontWeight: 'bold', 
+                textDecoration: 'none',
+                mr: 3,
+                '&:hover': { textDecoration: 'underline' }
+              }}
+            >
+              Foodius Partner
+            </Typography>
+
             <Button 
               component={Link} 
               to="/login" 

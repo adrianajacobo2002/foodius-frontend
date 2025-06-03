@@ -12,6 +12,8 @@ import ClientDashboard from "./pages/Cliente/Home";
 import BusinessDashboard from "./pages/Negocio/Home";
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
+import FoodiusPartner from "./pages/Public/FoodiusPartner"
+import 'leaflet/dist/leaflet.css';
 
 const App: React.FC = () => {
   return (
@@ -48,6 +50,7 @@ const AppRoutes: React.FC = () => {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/foodius-partner" element={<FoodiusPartner />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
 
