@@ -5,12 +5,15 @@ import LandingPage from './pages/Public/LandingPage';
 import RegisterForm from './forms/Register';
 import LoginForm from './forms/Login';
 
+import SeParte from './pages/Public/FoodiusPartner'
+
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/big" element={<SeParte/>} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
     </Router>
