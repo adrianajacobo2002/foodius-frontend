@@ -14,6 +14,11 @@ import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import FoodiusPartner from "./pages/Public/FoodiusPartner"
 import 'leaflet/dist/leaflet.css';
+import Administrar from "./pages/Negocio/Administrar";
+import Menu from "./pages/Negocio/Menu";
+import Ordenes from "./pages/Negocio/Ordenes";
+import Horarios from "./pages/Negocio/Horarios";
+
 
 const App: React.FC = () => {
   return (
@@ -64,6 +69,21 @@ const AppRoutes: React.FC = () => {
 
         <Route path="/business" element={
           <PrivateRoute roles={["BUSINESS"]}><BusinessDashboard /></PrivateRoute>
+        } />
+        <Route path="/business/administrar" element={
+          <PrivateRoute roles={["BUSINESS"]}><Administrar /></PrivateRoute>
+        } />
+
+        <Route path="/business/menu" element={
+          <PrivateRoute roles={["BUSINESS"]}><Menu /></PrivateRoute>
+        } />
+
+        <Route path="/business/ordenes" element={
+          <PrivateRoute roles={["BUSINESS"]}><Ordenes /></PrivateRoute>
+        } />
+
+        <Route path="/business/horarios" element={
+          <PrivateRoute roles={["BUSINESS"]}><Horarios /></PrivateRoute>
         } />
       </Routes>
     </>
