@@ -1,11 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PublicNavbar from './layouts/PublicNavbar';
-import LandingPage from './pages/Public/LandingPage';
-import RegisterForm from './forms/Register';
-import LoginForm from './forms/Login';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PublicNavbar from "./layouts/PublicNavbar";
+import LandingPage from "./pages/Public/LandingPage";
+import RegisterForm from "./forms/Register";
+import LoginForm from "./forms/Login";
 
-import SeParte from './pages/Public/FoodiusPartner'
+
+
 
 const App: React.FC = () => {
   return (
@@ -13,7 +14,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/big" element={<SeParte/>} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
     </Router>

@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import "./partner.css";
 import logo from "../../assets/img/foodius-logo.png";
 import phone from "../../assets/img/new.png";
