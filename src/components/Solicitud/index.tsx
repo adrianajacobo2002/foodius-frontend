@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, IconButton, Avatar, Paper } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
 import ClearIcon from "@mui/icons-material/Clear";
 import CheckIcon from "@mui/icons-material/Check";
 
@@ -8,18 +7,18 @@ interface BusinessCardProps {
   name: string;
   status: string;
   image: string;
-  onEdit?: () => void;
-  onApprove?: () => void;
-  onReject?: () => void;
+  onApprove: () => void;
+  onReject: () => void;
+  onClick: () => void;
 }
 
 export default function BusinessCard({
   name,
   status,
   image,
-  onEdit,
   onApprove,
   onReject,
+  onClick,
 }: BusinessCardProps) {
   return (
     <Paper
@@ -31,7 +30,9 @@ export default function BusinessCard({
         overflow: "hidden",
         p: 1.5,
         mb: 2,
+        cursor: "pointer",
       }}
+      onClick={onClick} // <-- usamos el onClick
     >
       <Avatar
         variant="rounded"
@@ -46,16 +47,18 @@ export default function BusinessCard({
           {status}
         </Typography>
       </Box>
-      <Box>
-        <IconButton onClick={onEdit}>
-          <EditIcon />
-        </IconButton>
-        <IconButton onClick={onReject}>
-          <ClearIcon />
-        </IconButton>
-        <IconButton onClick={onApprove}>
-          <CheckIcon />
-        </IconButton>
+      <Box onClick={(e) => e.stopPropagation()}>
+        {/* Solo mostramos los botones si está en pendiente */}
+        {status === "PENDING" && (
+          <>
+            <IconButton onClick={onReject}>
+              <ClearIcon />
+            </IconButton>
+            <IconButton onClick={onApprove}>
+              <CheckIcon />
+            </IconButton>
+          </>
+        )}
       </Box>
     </Paper>
   );
